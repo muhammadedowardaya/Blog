@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
- 
+
 Auth::routes();
 Route::get('/', function () {
     return view('welcome');
@@ -26,8 +26,8 @@ Route::prefix('posts')->group(function () {
     Route::get('/', 'PostController@index')->name('posts');
     Route::get('create', 'PostController@create')->name('post.create');
     Route::post('store', 'PostController@store')->name('post.store');
-    Route::get('{posts:slug}', 'PostController@show')->name('post.show');
-    Route::patch('{posts:slug}/update', 'PostController@update')->name('post.update');
-    Route::delete('{posts:id}/destroy', 'PostController@destroy')->name('post.delete');
-    Route::get('{posts:slug}/edit', 'PostController@edit')->name('post.edit');
+    Route::get('{post:slug}', 'PostController@show')->name('post.show');
+    Route::delete('{post:id}/destroy', 'PostController@destroy')->name('post.delete');
+    Route::patch('{post:slug}/update', 'PostController@update')->name('post.update');
+    Route::get('{post:slug}/edit', 'PostController@edit')->name('post.edit');
 });

@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <form action="" method="post">
+            <form action="{{route('post.update',$post->slug)}}" method="post">
                 @csrf
-                @method('PATCH')
+                @method('patch')
                 @include('post.partials.form',['submit' => 'Update'])
             </form>
         </div>
