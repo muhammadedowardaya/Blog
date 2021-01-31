@@ -14,7 +14,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{$post->title}}</h5>
-                    <p class="card-text">{{Str::limit($post->body,100)}}</p>
+                    <p class="card-text">{!!nl2br(Str::limit($post->body,100))!!}</p>
                     <a href="/posts/{{$post->slug}}" class="btn btn-primary">Read more</a>
                 </div>
             </div>

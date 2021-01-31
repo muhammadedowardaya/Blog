@@ -19,15 +19,27 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
     <div id="app">
         @include('layouts.navigation')
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <button class="btn btn-outline-primary" onclick="pesan.berhasil('Data berhasil ditambahkan')">Test</button>
+                </div>
+            </div>
+        </div>
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+
+    <script src="{{asset('js/script.js')}}"></script>
+    <script src="{{asset('js/sweetalert2.all.js')}}"></script>
+    @include('alert')
 </body>
 
 </html>

@@ -40,6 +40,7 @@ class PostController extends Controller
         $post = $request->all();
         $post['slug'] = \Str::slug($request->title);
         Post::create($post);
+        session()->flash('success', 'Data Berhasil ditambahkan');
         return redirect()->to('posts');
     }
 
@@ -76,6 +77,7 @@ class PostController extends Controller
     {
         $attr = $request->all();
         $post->update($attr);
+        session()->flash('success', 'Data Berhasil ditambahkan');
         return redirect()->to('/posts');
     }
 
@@ -85,8 +87,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        return 'hapus';
+        $post->delete();
+        session()->flash('success', 'Data Berhasil ditambahkan');
+        return redirect()->to('posts');
     }
 }
