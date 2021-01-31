@@ -25,13 +25,6 @@
 <body>
     <div id="app">
         @include('layouts.navigation')
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <button class="btn btn-outline-primary" onclick="pesan.berhasil('Data berhasil ditambahkan')">Test</button>
-                </div>
-            </div>
-        </div>
         <main class="py-4">
             @yield('content')
         </main>

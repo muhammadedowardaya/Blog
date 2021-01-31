@@ -77,7 +77,7 @@ class PostController extends Controller
     {
         $attr = $request->all();
         $post->update($attr);
-        session()->flash('success', 'Data Berhasil ditambahkan');
+        session()->flash('success', 'Data Berhasil diUpdate');
         return redirect()->to('/posts');
     }
 
@@ -90,7 +90,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        session()->flash('success', 'Data Berhasil ditambahkan');
+        session()->flash('success', 'Data Berhasil Dihapus');
         return redirect()->to('posts');
     }
 }
